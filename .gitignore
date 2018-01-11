@@ -1,0 +1,20 @@
+# 初次的ZIP檔案, 不必上傳或部署
+mysite.zip
+
+# 是否在最上層,所有APP都有效
+# 剛才打開, 但沒有上傳, 再關起來.
+
+
+
+#testing again, close again!!!
+__pycache__/
+
+
+#數據不要上傳, 不受目錄影響, 只要同名就...擋
+db.sqlite3
+#mysite/db.sqlite3
+
+#根目錄的STATIC 不要上傳, 各模塊app的要上傳,
+#在服務器端運行 collectstatic
+# ???????????????????????
+#static
