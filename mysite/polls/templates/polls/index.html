@@ -1,17 +1,17 @@
 
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+ <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 <h1>FT2018模具</h1>
+<h3>由张韬维护,ip地址:10.10.0.112</h3><a class="btn btn-primary" href="http://portal.fulltech-metal.com/">企業入口網站</a>
+{% if latest_muju_list %}
+<table class="gridtable">
+	<tr><th>模具维修工单</th><th>AMRT300日期</th><th>维修人员</th><th>资源编号</th><th>资源名称</th><th>模具预计完成日</th><th>项次</th><th>报修原因</th><th>拆模计划日期</th><th>拆模实际日期</th><th>易损与材料制作计划</th><th>易损与材料制作实际</th><th>线割计划日期</th><th>线割实际日期</th><th>烧焊计划日期</th><th>烧焊实际日期</th><th>CNC计划日期</th><th>CNC实际日期</th><th>放电计划日期</th><th>放电实际日期</th><th>抛光计划日期</th><th>抛光实际日期</th><th>组立计划日期</th><th>组立实际日期</th><th>其他计划日期</th><th>其他实际日期</th><th>备注</th><th>维修瓶颈工序</th><th>实际完成日期</th>
+   {% for item in latest_muju_list %}
 
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
-{{ question.question_description }}
-    </li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<tr><td>{{item.muju_wo}}</td><td>{{item.muju_date}}</td><td>{{item.muju_empe}}</td><td>{{item.muju_source_code}}</td><td>{{item.muju_source_code_name}}</td><td>{{item.muju_plan_date}}</td><td>{{item.muju_seq}}</td><td>{{item.muju_Reason}}</td><td>{{item.muju_date1}}</td><td>{{item.muju_date2}}</td><td>{{item.muju_date3}}</td><td>{{item.muju_date4}}</td><td>{{item.muju_date5}}</td><td>{{item.muju_date6}}</td><td>{{item.muju_date7}}</td><td>{{item.muju_date8}}</td><td>{{item.muju_date9}}</td><td>{{item.muju_date10}}</td><td>{{item.muju_date11}}</td><td>{{item.muju_date12}}</td><td>{{item.muju_date13}}</td><td>{{item.muju_date14}}</td><td>{{item.muju_date15}}</td><td>{{item.muju_date16}}</td><td>{{item.muju_date17}}</td><td>{{item.muju_date18}}</td><td>{{item.muju_date19}}</td><td>{{item.muju_date20}}</td><td>{{item.muju_date21}}</td></tr>
+     {% endfor %}
+  </table>
+ {% else %}
+   <p>No latest_muju_list are available.</p>
+ {% endif %}

@@ -10,6 +10,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 
 from .models import Choice, Question
+from .models import Muju
 
 
 # def index(request):
@@ -23,8 +24,8 @@ from .models import Choice, Question
 
 
 def index(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:12]
-    context = {'latest_question_list': latest_question_list}
+    latest_muju_list = Muju.objects.order_by('muju_date')[:12]
+    context = {'latest_muju_list': latest_muju_list}
     return render(request, 'polls/index.html', context)
 
 def detail(request, question_id):
