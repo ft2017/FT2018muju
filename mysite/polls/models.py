@@ -31,7 +31,7 @@ class Muju(models.Model):
     muju_plan_date = models.DateField('模具预计完成日',null=True, blank=True)
     muju_seq = models.CharField('项次',max_length=10, default='.')
     muju_Reason = models.CharField('报修原因',max_length=1000, default='.')
-    muju_date1 = models.DateField('拆模计划日期',null=True, blank=True)
+    muju_date1 = models.DateField('拆模计划日期', null=True,blank=True,default=' ')
     muju_date2 = models.DateField('拆模实际日期',null=True, blank=True)
     muju_date3 = models.DateField('易损与材料制作计划',null=True, blank=True)
     muju_date4 = models.DateField('易损与材料制作实际',null=True, blank=True)
