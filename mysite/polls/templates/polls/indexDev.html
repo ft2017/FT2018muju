@@ -1,0 +1,97 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+</head>
+ <body>
+
+
+
+
+
+      <div class="container-fluid">
+        <a class='btn btn-primary btn-lg' href='http://portal.fulltech-metal.com/'>企業入口網站</a>&nbsp;
+            <a class='btn btn-primary btn-lg' href='http://10.10.0.108'>FT2018 企業內部自主開發</a>&nbsp;
+<!-- <h1>FT2018 企業內部自主開發 压铸/模具 開發</h1> -->
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+   <div class="jumbotron">
+     <div class="container-fluid">
+       <h1 class="display-3">FT2018 企業內部自主開發</h1>
+       <p> 關鍵技術底層和開發部署境簡述。</p>
+       <p><a class="btn btn-primary btn-lg" href="../" role="button">回到FT2018 企業內部自主開發 &raquo;</a></p>
+     </div>
+   </div>
+
+   <div class="container-fluid">
+     <!-- Example row of columns -->
+     <div class="row">
+       <div class="col-md-4">
+         <h2>正式環境</h2>
+         <p>基本上，FT2018 企業內部自主開發主要以 Web App 發佈，佈署在企業內部的虛擬機，除非有特別說明，一般僅限局網訪問。 </p>
+         <p>用戶使用【電腦|平板|手機】的流覽器，連上局網，必要的登入信息，即可訪問。 </p>
+         <!-- <p>單獨的額外需求，會單獨說明。 </p> -->
+
+          <!-- <p> <a class='btn btn-primary' href='http://10.10.0.111'>直接訪問正在開發的 Web App</a></p>… -->
+
+         <!-- <p><a class="btn btn-secondary" href="http://10.10.0.111" role="button">直接訪問正在開發的 Web App &raquo;</a></p> -->
+       </div>
+       <div class="col-md-4">
+         <h2>開發環境</h2>
+         <p>開發人員的電腦基本上都具有模擬正式環境的功能。
+           開發環境可以是搭建在 Windows 或是 Linux 的作業環境。 </p>
+           <p>目前的程式開發語言和框架以 Django/Python 為主，也包括 PHP 和 Java。
+             開發環境可以是搭建在 Windows 或是 Linux 的作業環境。 </p>
+
+         <!-- <p><a class="btn btn-primary" href="http://10.10.0.112" role="button">直接訪問正在開發的 Web App &raquo;</a></p> -->
+        </div>
+       <div class="col-md-4">
+         <h2>數據庫</h2>
+         <p>項目相關直接連接的數據庫包括 Oracle, PostgreSQL 和最簡易的SQLite。</p>
+         <!-- <p><a class="btn btn-secondary" href="#" role="button">直接訪問正在開發的 Web App &raquo;</a></p> -->
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-md-4">
+         <h2>需求說明</h2>
+         <p>經過和項目需求人員的訪談，我們會簡述需求供各層管理人員的參考，以利在不同階段有不同的指示調整應變。 </p>
+         <!-- <p>用戶使用【電腦|平板|手機】的流覽器，連上局網，必要的登入信息，即可訪問。 </p> -->
+         <!-- <p>單獨的額外需求，會單獨說明。 </p> -->
+
+          <!-- <p> <a class='btn btn-primary' href='http://10.10.0.111'>直接訪問正在開發的 Web App</a></p>… -->
+
+         <!-- <p><a class="btn btn-secondary" href="http://10.10.0.111" role="button">直接訪問正在開發的 Web App &raquo;</a></p> -->
+       </div>
+       <div class="col-md-4">
+         <h2>技術要點</h2>
+        <p>原先index没有用date formate,会显示为none， 用了“| date:'Y-m-d H:i'”了之后就可以了。</p>
+        <p>今天要突破的是url传参，和接收。</p>
+         <p>不容易實現的部份將儘量先做出基礎版本，再循序討論優化。</p>
+
+         <!-- <p><a class="btn btn-primary" href="http://10.10.0.112" role="button">直接訪問正在開發的 Web App &raquo;</a></p> -->
+        </div>
+       <div class="col-md-4">
+         <h2>開發要點</h2>
+         <p>主要先實現可充份實現的部份。</p>
+         <p>不容易實現的部份將儘量先做出基礎版本，再循序討論優化。</p>
+         <!-- <p><a class="btn btn-secondary" href="#" role="button">直接訪問正在開發的 Web App &raquo;</a></p> -->
+       </div>
+     </div>
+
+
+
+   </div> <!-- /container -->
+
+
+</div>
+</body>
+</html>

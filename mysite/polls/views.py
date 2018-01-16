@@ -17,22 +17,31 @@ from .models import Muju
 #     return HttpResponse("<h1>中文</h1> Hello, world. You're at the polls index.")
 
 
-# def index(request):
-#     latest_question_list = Question.objects.order_by('-pub_date')[:5]
-#     output = ', '.join([q.question_text for q in latest_question_list])
-#     return HttpResponse(output)
+
 
 
 def index(request):
     latest_muju_list = Muju.objects.order_by('muju_date')[:12]
+
     context = {'latest_muju_list': latest_muju_list}
     return render(request, 'polls/index.html', context)
+
+
+
 
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/detail.html', {'question': question})
 
 
+def index_old(request,muju_wo):
+    muju = get_object_or_404(muju, pk=muju_id)
+    return render(request, 'polls/index_old.html', {'muju': muju})    
+
+def indexDev(request):
+    ft_dev_list = Muju.objects.order_by('muju_date')[:12]
+    context = {'ft_dev_list': ft_dev_list}
+    return render(request, 'polls/indexDev.html', context)
 # def results(request, question_id):
 #     response = "You're looking at the results of question %s."
 #     return HttpResponse(response % question_id)
