@@ -3,11 +3,10 @@
 <h3>{{ question.question_description }}</h3>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
+<a href="../">xxx</a>
 
-<form action="{% url 'polls:vote' question.id %}" method="post">
-
-{% csrf_token %}
-{% for choice in question.choice_set.all %}
+<form action="{% url 'polls:index_old' item.latest_muju_list %}" method="post">
+{% for choice in latest_muju_list %}
     <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
 {% endfor %}

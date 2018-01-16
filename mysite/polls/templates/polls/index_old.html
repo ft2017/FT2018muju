@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+</head>
+ <body>
+
+
+ <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+ <div class="container-fluid">
+ 	<h1>FT2018模具</h1>
+<h3>由张韬维护,ip地址:10.10.0.112</h3>
+        <a class='btn btn-primary btn-lg' href='../'>回到FT2018模具</a>&nbsp;
+      
+
+{% if late_muju_list %}
+<form action="{% url 'polls:index_old' item.wo %}" method="post">
+<table class="gridtable">
+	<tr><th> </th><th>模具维修工单</th><th>AMRT300日期</th><th>维修人员</th><th>资源编号</th><th>资源名称</th><th>模具预计完成日</th><th>项次</th><th>报修原因</th><th>拆模计划日期</th><th>拆模实际日期</th><th>易损与材料制作计划</th><th>易损与材料制作实际</th><th>线割计划日期</th><th>线割实际日期</th><th>烧焊计划日期</th><th>烧焊实际日期</th><th>CNC计划日期</th><th>CNC实际日期</th><th>放电计划日期</th><th>放电实际日期</th><th>抛光计划日期</th><th>抛光实际日期</th><th>组立计划日期</th><th>组立实际日期</th><th>其他计划日期</th><th>其他实际日期</th><th>备注</th><th>维修瓶颈工序</th><th>实际完成日期</th></tr>
+  {% csrf_token %}
+   {% for item in late_muju_list %}
+
+<tr><th>{{ forloop.counter }}</th><td>{{item.muju_wo}}</td><td>{{item.muju_date | date:'Y-m-d '}}</td><td>{{item.muju_empe}}</td><td>{{item.muju_source_code}}</td><td>{{item.muju_source_code_name}}</td><td>{{item.muju_plan_date | date:'Y-m-d '}}</td><td>{{item.muju_seq}}</td><td>{{item.muju_Reason}}</td><td>{{item.muju_date1 | date:'Y-m-d '}}</td><td>{{item.muju_date2 | date:'Y-m-d '}}</td><td>{{item.muju_date3 | date:'Y-m-d '}}</td><td>{{item.muju_date4 | date:'Y-m-d '}}</td><td>{{item.muju_date5 | date:'Y-m-d '}}</td><td>{{item.muju_date6 | date:'Y-m-d '}}</td><td>{{item.muju_date7 | date:'Y-m-d '}}</td><td>{{item.muju_date8 | date:'Y-m-d '}}</td><td>{{item.muju_date9 | date:'Y-m-d '}}</td><td>{{item.muju_date10 | date:'Y-m-d '}}</td><td>{{item.muju_date11 | date:'Y-m-d '}}</td><td>{{item.muju_date12 | date:'Y-m-d '}}</td><td>{{item.muju_date13 | date:'Y-m-d '}}</td><td>{{item.muju_date14 | date:'Y-m-d '}}</td><td>{{item.muju_date15 | date:'Y-m-d '}}</td><td>{{item.muju_date16 | date:'Y-m-d '}}</td><td>{{item.muju_date17 | date:'Y-m-d '}}</td><td>{{item.muju_date18 | date:'Y-m-d '}}</td><td>{{item.muju_date19 | date:'Y-m-d '}}</td><td>{{item.muju_date20 | date:'Y-m-d '}}</td><td>{{item.muju_date21 | date:'Y-m-d '}}</td>
+</tr>
+
+     {% endfor %}
+  </table>
+
+ {% else %}
+   <p>No late_muju_list are available.</p>
+ {% endif %}
+</div>
+
+
+</body>
+</html>
