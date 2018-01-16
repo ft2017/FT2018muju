@@ -21,7 +21,7 @@
       
 
 {% if late_muju_list %}
-<form action="{% url 'polls:index_old' item.wo %}" method="post">
+
 <table class="gridtable">
 	<tr><th> </th><th>模具维修工单</th><th>AMRT300日期</th><th>维修人员</th><th>资源编号</th><th>资源名称</th><th>模具预计完成日</th><th>项次</th><th>报修原因</th><th>拆模计划日期</th><th>拆模实际日期</th><th>易损与材料制作计划</th><th>易损与材料制作实际</th><th>线割计划日期</th><th>线割实际日期</th><th>烧焊计划日期</th><th>烧焊实际日期</th><th>CNC计划日期</th><th>CNC实际日期</th><th>放电计划日期</th><th>放电实际日期</th><th>抛光计划日期</th><th>抛光实际日期</th><th>组立计划日期</th><th>组立实际日期</th><th>其他计划日期</th><th>其他实际日期</th><th>备注</th><th>维修瓶颈工序</th><th>实际完成日期</th></tr>
   {% csrf_token %}
