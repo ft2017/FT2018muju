@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+</head>
+ <body>
+
+
+ <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+ <div class="container-fluid">
+ 	<h1>FT2018模具</h1>
+<h3>由张韬维护,ip地址:10.10.0.112</h3>
+        <a class='btn btn-primary btn-lg' href='http://portal.fulltech-metal.com/'>企業入口網站</a>&nbsp;
+        <a class='btn btn-primary btn-lg' href='http://10.10.0.108/'>FT2018 企業內部自主開發</a>&nbsp;
+         <p><a class="btn btn-primary btn-lg" href="dev" role="button">瞭解更多 &raquo;</a></p>
+{% if latest_muju_list %}
+<table class="gridtable">
+	<tr><th> </th><th>模具维修工单</th><th>AMRT300日期</th><th>维修人员</th><th>资源编号</th><th>资源名称</th><th>模具预计完成日</th><th>项次</th><th>报修原因</th><th>查看</th></tr>
+   {% for item in latest_muju_list %}
+
+<tr><th>{{ forloop.counter }}</th><td>{{item.muju_wo}}</td><td>{{item.muju_date | date:'Y-m-d '}}</td><td>{{item.muju_empe}}</td><td>{{item.muju_source_code}}</td><td>{{item.muju_source_code_name}}</td><td>{{item.muju_plan_date | date:'Y-m-d '}}</td><td>{{item.muju_seq}}</td><td>{{item.muju_Reason}}</td><td><a href="{% url 'polls:index_old' item.muju_wo%}">xxx</a></td>
+</tr>
+
+     {% endfor %}
+  </table>
+
+ {% else %}
+   <p>No latest_muju_list are available.</p>
+ {% endif %}
+
+</div>
+
+
+</body>
+</html>
