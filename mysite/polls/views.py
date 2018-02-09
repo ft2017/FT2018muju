@@ -6,11 +6,8 @@
 
 
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponseRedirect, HttpResponse
-from django.urls import reverse
-
-from .models import Choice, Question
-from .models import Muju
+# Create your views here.
+from . models import Muju1,Muju_date1
 
 
 # def index(request):
@@ -20,9 +17,9 @@ from .models import Muju
 
 
 def index(request):
-  latest_muju_list = Muju.objects.order_by('muju_date')[:12]
-  context = {'latest_muju_list': latest_muju_list}
-  return render(request, 'polls/index.html', context)
+    latest_muju_list = Muju1.objects.order_by('muju_date')[:12]
+    context = {'latest_muju_list': latest_muju_list}
+    return render(request, 'polls/index.html', context)
 
 
 #def index(request):
@@ -39,17 +36,17 @@ def index(request):
 
 
 
-def detail(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/detail.html', {'question': question})
+def detail(request, muju_id):
+    muju = get_object_or_404(Muju1, pk=muju_id)
+    return render(request, 'polls/detail.html', {'muju': muju})
 
 
 def index_old(request,muju_wo):
-    muju = get_object_or_404(Muju, pk=muju_wo)
+    muju = get_object_or_404(Muju1, pk=muju_wo)
     return render(request, 'polls/index_old.html', {'muju': muju})
 
 def indexDev(request):
-    ft_dev_list = Muju.objects.order_by('muju_date')[:12]
+    ft_dev_list = Muju1.objects.order_by('muju_date')[:12]
     context = {'ft_dev_list': ft_dev_list}
     return render(request, 'polls/indexDev.html', context)
 # def results(request, question_id):

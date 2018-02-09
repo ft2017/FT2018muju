@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-from django.db import models
+# from django.db import models
 
 
 class Yazhu(models.Model):
@@ -21,16 +21,23 @@ class Yazhu(models.Model):
 #     def __str__(self):
 #         return self.reject_name
 
-class Muju(models.Model):
+# from django.db import models
+
+# Create your models here.
+class Muju1(models.Model):
     muju_wo = models.CharField('模具维修工单',max_length=50, default='.')
     muju_date = models.DateField('AMRT300日期')
     muju_empe = models.CharField('维修人员',max_length=50, default='.')
     muju_source_code = models.CharField('资源编号',max_length=50, default='.')
     muju_source_code_name = models.CharField('资源名称',max_length=50, default='.')
-   # muju_plan_date = models.CharField('模具预计完成日',max_length=100, default='.')
     muju_plan_date = models.DateField('模具预计完成日',null=True, blank=True)
     muju_seq = models.CharField('项次',max_length=10, default='.')
     muju_Reason = models.CharField('报修原因',max_length=1000, default='.')
+    def __str__(self):
+        return self.muju_wo
+
+class Muju_date1(models.Model):
+    Muju = models.ForeignKey(Muju1, on_delete=models.CASCADE)
     muju_date1 = models.DateField('拆模计划日期', null=True,blank=True,default=' ')
     muju_date2 = models.DateField('拆模实际日期',null=True, blank=True)
     muju_date3 = models.DateField('易损与材料制作计划',null=True, blank=True)
@@ -52,10 +59,8 @@ class Muju(models.Model):
     muju_date19 = models.DateField('备注',null=True, blank=True)
     muju_date20 = models.DateField('维修瓶颈工序',null=True, blank=True)
     muju_date21 = models.DateField('实际完成日期',null=True, blank=True)
-    def __str__(self):
-        return self.muju_wo
-
-
+    # def __str__(self):
+    #     return self.Muju
 
 
 class Question(models.Model):
