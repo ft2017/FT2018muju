@@ -38,7 +38,7 @@ class Muju1(models.Model):
 
 class Muju_date1(models.Model):
     Muju = models.ForeignKey(Muju1, on_delete=models.CASCADE)
-    muju_date1 = models.DateField('拆模计划日期', null=True,blank=True,default=' ')
+    muju_date1 = models.DateField('拆模计划日期', null=True,blank=True)
     muju_date2 = models.DateField('拆模实际日期',null=True, blank=True)
     muju_date3 = models.DateField('易损与材料制作计划',null=True, blank=True)
     muju_date4 = models.DateField('易损与材料制作实际',null=True, blank=True)
@@ -59,8 +59,8 @@ class Muju_date1(models.Model):
     muju_date19 = models.DateField('备注',null=True, blank=True)
     muju_date20 = models.DateField('维修瓶颈工序',null=True, blank=True)
     muju_date21 = models.DateField('实际完成日期',null=True, blank=True)
-    # def __str__(self):
-    #     return self.Muju
+    def __str__(self):
+        return self.Muju
 
 
 class Question(models.Model):

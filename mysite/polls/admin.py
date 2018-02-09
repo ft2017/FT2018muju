@@ -28,7 +28,7 @@ class MujuAdmin(admin.ModelAdmin):
         (None,               {'fields': ['muju_wo','muju_date','muju_empe','muju_source_code','muju_source_code_name','muju_plan_date','muju_seq','muju_Reason']}),
         # ('Date information', {'fields': ['muju_date']}),
     ]
-    # list_display = ('muju_wo', 'muju_date')
+    list_display = ('muju_wo', 'muju_source_code','muju_source_code_name')
       
     # inlines = [Muju_date111Inline]
 admin.site.register(Muju1, MujuAdmin)
