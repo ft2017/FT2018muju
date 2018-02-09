@@ -18,10 +18,97 @@
 <table class="gridtable">
 	<tr><th> </th><th>模具维修工单</th><th>AMRT300日期</th><th>维修人员</th><th>资源编号</th><th>资源名称</th><th>模具预计完成日</th><th>项次</th><th>报修原因</th><th>拆模计划日期</th><th>拆模实际日期</th><th>易损与材料制作计划</th><th>易损与材料制作实际</th><th>线割计划日期</th><th>线割实际日期</th><th>烧焊计划日期</th><th>烧焊实际日期</th><th>CNC计划日期</th><th>CNC实际日期</th><th>放电计划日期</th><th>放电实际日期</th><th>抛光计划日期</th><th>抛光实际日期</th><th>组立计划日期</th><th>组立实际日期</th><th>其他计划日期</th><th>其他实际日期</th><th>备注</th><th>维修瓶颈工序</th><th>实际完成日期</th></tr>
 {% for choice in muju.muju_date1_set.all %}
-<tr><th>{{ forloop.counter }}</th><td>{{muju.muju_wo}}</td><td>{{muju.muju_date | date:'Y-m-d '}}</td><td>{{muju.muju_empe}}</td><td>{{muju.muju_source_code}}</td><td>{{muju.muju_source_code_name}}</td><td>{{muju.muju_plan_date | date:'Y-m-d '}}</td><td>{{muju.muju_seq}}</td><td>{{muju.muju_Reason}}</td><td>{{choice.muju_date1 | date:'Y-m-d '}}</td><td>{{choice.muju_date2 | date:'Y-m-d '}}</td><td>{{choice.muju_date3 | date:'Y-m-d '}}</td><td>{{choice.muju_date4 | date:'Y-m-d '}}</td><td>{{choice.muju_date5 | date:'Y-m-d '}}</td><td>{{choice.muju_date6 | date:'Y-m-d '}}</td><td>{{choice.muju_date7 | date:'Y-m-d '}}</td><td>{{choice.muju_date8 | date:'Y-m-d '}}</td><td>{{choice.muju_date9 | date:'Y-m-d '}}</td><td>{{choice.muju_date10 | date:'Y-m-d '}}</td><td>{{choice.muju_date11 | date:'Y-m-d '}}</td><td>{{choice.muju_date12 | date:'Y-m-d '}}</td><td>{{choice.muju_date13 | date:'Y-m-d '}}</td><td>{{choice.muju_date14 | date:'Y-m-d '}}</td><td>{{choice.muju_date15 | date:'Y-m-d '}}</td><td>{{choice.muju_date16 | date:'Y-m-d '}}</td><td>{{choice.muju_date17 | date:'Y-m-d '}}</td><td>{{choice.muju_date18 | date:'Y-m-d '}}</td><td>{{choice.muju_date19 | date:'Y-m-d '}}</td><td>{{choice.muju_date20 | date:'Y-m-d '}}</td><td>{{choice.muju_date21 | date:'Y-m-d '}}</td>
+<tr><th>{{ forloop.counter }}</th>
+<td>{{muju.muju_wo}}</td>
+<td>{{muju.muju_date | date:'Y-m-d '}}</td>
+<td>{{muju.muju_empe}}</td>
+<td>{{muju.muju_source_code}}</td>
+<td>{{muju.muju_source_code_name}}</td>
+<td>{{muju.muju_plan_date | date:'Y-m-d '}}</td>
+<td>{{muju.muju_seq}}</td>
+<td>{{muju.muju_Reason}}</td>
+<td>{{choice.muju_date1 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date2 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date3 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date4 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date5 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date6 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date7 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date8 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date9 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date10 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date11 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date12 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date13 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date14 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date15 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date16 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date17 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date18 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date19 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date20 | date:'Y-m-d '}}</td>
+<td>{{choice.muju_date21 | date:'Y-m-d '}}</td>
 </tr>
 {% endfor %}
 </table>
+
+
+<br>
+<table class="gridtable">
+{% for choice in muju.muju_date1_set.all %}
+<tr><th>模具维修工单</th><td>{{muju.muju_wo}}</td></tr>
+<tr><th>AMRT300日期</th><td>{{muju.muju_date | date:'Y-m-d '}}</td></tr>
+<tr><th>维修人员</th><td>{{muju.muju_empe}}</td></tr>
+<tr><th>资源编号</th><td>{{muju.muju_source_code}}</td></tr>
+<tr><th>资源名称</th><td>{{muju.muju_source_code_name}}</td></tr>
+<tr><th>模具预计完成日</th><td>{{muju.muju_plan_date | date:'Y-m-d '}}</td></tr>
+<tr><th>项次</th><td>{{muju.muju_seq}}</td></tr>
+<tr><th>报修原因</th><td>{{muju.muju_Reason}}</td></tr>
+<tr><th>拆模计划日期</th><td>{{choice.muju_date1 | date:'Y-m-d '}}</td></tr>
+<tr><th>拆模实际日期</th><td>{{choice.muju_date2 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>易损与材料制作计划</th><td>{{choice.muju_date3 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>易损与材料制作实际</th><td>{{choice.muju_date4 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>线割计划日期</th><td>{{choice.muju_date5 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>线割实际日期</th><td>{{choice.muju_date6 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>烧焊计划日期</th><td>{{choice.muju_date7 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>烧焊实际日期</th><td>{{choice.muju_date8 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>CNC计划日期</th><td>{{choice.muju_date9 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>CNC实际日期</th><td>{{choice.muju_date10 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>放电计划日期</th><td>{{choice.muju_date11 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>放电实际日期</th><td>{{choice.muju_date12 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>抛光计划日期</th><td>{{choice.muju_date13 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>抛光实际日期</th><td>{{choice.muju_date14 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>组立计划日期</th><td>{{choice.muju_date15 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>组立实际日期</th><td>{{choice.muju_date16 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>其他计划日期</th><td>{{choice.muju_date17 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>其他实际日期</th><td>{{choice.muju_date18 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>备注</th><td>{{choice.muju_date19 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>维修瓶颈工序</th><td>{{choice.muju_date20 | date:'Y-m-d '}}</td></tr>
+
+<tr><th>实际完成日期</th><td>{{choice.muju_date21 | date:'Y-m-d '}}</td></tr>
+
+{% endfor %}
+</table>
+
+
 </div>
 
 
