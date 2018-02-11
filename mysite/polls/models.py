@@ -42,7 +42,7 @@ class Muju1(models.Model):
         return self.muju_wo
 
 class Muju_date1(models.Model):
-    Muju = models.ForeignKey(Muju1, on_delete=models.CASCADE)
+    Muju = models.ForeignKey(Muju1, on_delete=models.CASCADE,verbose_name='模具维修工单')
     muju_date1 = models.DateField('拆模计划日期', null=True,blank=True)
     muju_date2 = models.DateField('拆模实际日期',null=True, blank=True)
     muju_date3 = models.DateField('易损与材料制作计划',null=True, blank=True)
