@@ -34,10 +34,6 @@ class Muju1(models.Model):
     muju_seq = models.CharField('项次',max_length=10, default='.')
     muju_Reason = models.CharField('报修原因',max_length=1000, default='.')
 
-    class meta:
-        verbose_name = '主要信息'
-        verbose_name_plural = '主要信息'
-    
     def __str__(self):
         return self.muju_wo
 
@@ -61,7 +57,7 @@ class Muju_date1(models.Model):
     muju_date16 = models.DateField('组立实际日期',null=True, blank=True)
     muju_date17 = models.DateField('其他计划日期',null=True, blank=True)
     muju_date18 = models.DateField('其他实际日期',null=True, blank=True)
-    muju_date19 = models.CharField('备注',max_length=1000, default='.')
+    muju_date19 = models.TextField('备注',max_length=1000, default='.')
     muju_date20 = models.CharField('维修瓶颈工序',max_length=50, default='.')
     muju_date21 = models.DateField('实际完成日期',null=True, blank=True)
     def __str__(self):
