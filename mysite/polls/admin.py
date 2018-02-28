@@ -20,7 +20,7 @@ class PostResource(resources.ModelResource):
     # full_title = Field()
     class Meta:
         model = Muju1
-        fields =('muju_wo','muju_date','muju_empe','muju_source_code','muju_source_code_name','muju_plan_date','muju_seq','muju_Reason')
+        # fields =('muju_wo','muju_date','muju_empe','muju_source_code','muju_source_code_name','muju_plan_date','muju_seq','muju_Reason')
         # fields=('Muju')
     # def dehydrate_full_title(self, Muju_date1):
         # return '%s by %s' % (Muju_date1.Muju)
