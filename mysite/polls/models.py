@@ -34,8 +34,6 @@ class Muju1(models.Model):
     # muju_seq = models.CharField('项次',max_length=10, default='.')
     muju_seq = models.IntegerField('项次', default='.')
     muju_Reason = models.CharField('报修原因',max_length=1000, default='.')
-    class meta:
-        ordering=['muju_wo','muju_date']
     def __str__(self):
         return self.muju_wo
 

@@ -38,7 +38,7 @@ class ChoiceInline(admin.TabularInline):
 
 class MujuDateInline(admin.StackedInline):
     model = Muju_date1
-    extra=0
+    extra=1
 
 class YazhuAdmin(admin.ModelAdmin):
     fieldsets = [
