@@ -5,6 +5,9 @@
  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap.min.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
@@ -18,24 +21,67 @@
 
 <h3>由张韬维护,ip地址:10.10.0.112</h3>
 
-<a class='btn btn-primary' href='/admin'>admin界面</a>&nbsp;
+<!-- <a class='btn btn-primary' href='/admin'>admin界面</a>&nbsp; -->
  <hr>
         <a class='btn btn-primary btn-lg' href='http://portal.fulltech-metal.com/'>企業入口網站 </a>&nbsp;
         <a class='btn btn-primary btn-lg' href='http://10.10.0.108/'>FT2018 企業內部自主開發</a>&nbsp;
         <a class='btn btn-primary btn-lg' href='dev'>了解更多</a>&nbsp;
       
-
-{% if latest_muju_list %}
+<br><br>
+{% if Muju_list %}
 
 <table class="gridtable">
   <tr><th> </th><th>模具维修工单</th><th>AMRT300日期</th><th>维修人员</th><th>资源编号</th><th>资源名称</th><th>模具预计完成日</th><th>项次</th><th>报修原因</th></tr>
 
-  {% for muju in latest_muju_list %}
+  {% for muju in Muju_list %}
      <tr><th>{{muju.id}}</th><td><a href="/muju/{{ muju.id }}/">{{ muju.muju_wo }}</a></td>
       <td>{{ muju.muju_date | date:'Y-m-d ' }}</td><td>{{muju.muju_empe}}</td><td>{{muju.muju_source_code}}</td><td>{{muju.muju_source_code_name}}</td><td>{{muju.muju_plan_date| date:'Y-m-d '}}</td><td>{{muju.muju_seq}}</td><td>{{muju.muju_Reason}}</td>
   {% endfor %}
+
 </table>
 
+<div class="pagination">
+    
+    <span class="step-links">
+
+
+        <!-- {#上一页按钮开始#} -->
+        <!-- {# 如果当前页有上一页#} -->
+        {% if Muju_list.has_previous %}
+            <!-- {#  当前页的上一页按钮正常使用#} -->
+            <a href="/?page={{ Muju_list.previous_page_number }}" class="btn btn-primary">上一页</a>
+        {% else %}
+            <!-- {# 当前页的不存在上一页时,上一页的按钮不可用#} -->
+            <a href="#" class="btn btn-primary">上一页</a>
+        {% endif %}
+        <!-- {#上一页按钮结束#} -->
+        <!-- {# 页码开始#} -->
+        <span class="current">
+            Page {{ Muju_list.number }} of {{ Muju_list.paginator.num_pages }}
+        </span>
+        {% for num in paginator.page_range %}
+       
+            {% if num == currentPage %}
+                <a href="/?page={{ num }}" class="btn btn-primary">{{ num }}</a>
+
+            {% else %}
+                <a href="/?page={{ num }}" class="btn btn-primary">{{ num }}</a>
+
+            {% endif %}
+        {% endfor %}
+        <!-- {#页码结束#} -->
+        <!-- {# 下一页按钮开始#} -->
+        {% if Muju_list.has_next %}
+            <a href="/?page={{ Muju_list.next_page_number }}" class="btn btn-primary">下一页</a>
+        {% else %}
+
+            <a href="#" class="btn btn-primary">下一页</a>
+        {% endif %}
+        {# 下一页按钮结束#}
+
+    
+</span>
+</div>
  {% else %}
    <p>No late_muju_list are available.</p>
  {% endif %}

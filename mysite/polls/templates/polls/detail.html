@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap.min.css' %}" />
+ <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
  <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
@@ -15,7 +18,7 @@
  <body>
  <div class="container-fluid">
  <h1><a href='/'>FT2018模具</a></h1>
-<table class="gridtable">
+<!-- <table class="gridtable">
 	<tr><th> </th><th>模具维修工单</th><th>AMRT300日期</th><th>维修人员</th><th>资源编号</th><th>资源名称</th><th>模具预计完成日</th><th>项次</th><th>报修原因</th><th>拆模计划日期</th><th>拆模实际日期</th><th>易损与材料制作计划</th><th>易损与材料制作实际</th><th>线割计划日期</th><th>线割实际日期</th><th>烧焊计划日期</th><th>烧焊实际日期</th><th>CNC计划日期</th><th>CNC实际日期</th><th>放电计划日期</th><th>放电实际日期</th><th>抛光计划日期</th><th>抛光实际日期</th><th>组立计划日期</th><th>组立实际日期</th><th>其他计划日期</th><th>其他实际日期</th><th>备注</th><th>维修瓶颈工序</th><th>实际完成日期</th></tr>
 {% for choice in muju.muju_date1_set.all %}
 <tr><th>{{ forloop.counter }}</th>
@@ -50,7 +53,7 @@
 <td>{{choice.muju_date21 | date:'Y-m-d '}}</td>
 </tr>
 {% endfor %}
-</table>
+</table> -->
 
 
 <br>
