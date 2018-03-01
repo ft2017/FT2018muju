@@ -7,7 +7,7 @@
 
 from django.shortcuts import get_object_or_404, render
 # Create your views here.
-from . models import Muju1,Muju_date1
+from . models import Muju1,Muju_date1,Mujuv2
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # def index(request):
@@ -24,7 +24,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def index(request):
     # Muju_list = Muju1.objects.order_by('muju_wo')[:1000]
-    Muju_list=Muju1.objects.all()
+    Muju_list=Mujuv2.objects.all()
     paginator = Paginator(Muju_list, 10)
     page = request.GET.get('page',1)
     class meta:

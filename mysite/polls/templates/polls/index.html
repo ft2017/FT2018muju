@@ -31,11 +31,11 @@
 {% if Muju_list %}
 
 <table class="gridtable">
-  <tr><th> </th><th>模具维修工单</th><th>AMRT300日期</th><th>维修人员</th><th>资源编号</th><th>资源名称</th><th>模具预计完成日</th><th>项次</th><th>报修原因</th></tr>
+  <tr><th> </th><th>模具维修工单</th><th>AMRT300日期</th><th>维修人员</th><th>资源编号</th><th>资源名称</th><th>模具预计完成日</th><th>项次</th><th>报修原因</th><th>拆模计划日期</th><th>拆模实际日期</th><th>易损与材料制作计划</th><th>易损与材料制作实际</th><th>线割计划日期</th><th>线割实际日期</th><th>烧焊计划日期</th><th>烧焊实际日期</th><th>CNC计划日期</th><th>CNC实际日期</th><th>放电计划日期</th><th>放电实际日期</th><th>抛光计划日期</th><th>抛光实际日期</th><th>组立计划日期</th><th>组立实际日期</th><th>其他计划日期</th><th>其他实际日期</th><th>备注</th><th>维修瓶颈工序</th><th>实际完成日期</th></tr>
 
   {% for muju in Muju_list %}
-     <tr><th>{{muju.id}}</th><td><a href="/muju/{{ muju.id }}/">{{ muju.muju_wo }}</a></td>
-      <td>{{ muju.muju_date | date:'Y-m-d ' }}</td><td>{{muju.muju_empe}}</td><td>{{muju.muju_source_code}}</td><td>{{muju.muju_source_code_name}}</td><td>{{muju.muju_plan_date| date:'Y-m-d '}}</td><td>{{muju.muju_seq}}</td><td>{{muju.muju_Reason}}</td>
+     <tr><th>{{muju.id}}</th><td>{{ muju.muju_wo }}</td>
+      <td>{{ muju.muju_date | date:'Y-m-d ' }}</td><td>{{muju.muju_empe}}</td><td>{{muju.muju_source_code}}</td><td>{{muju.muju_source_code_name}}</td><td>{{muju.muju_plan_date| date:'Y-m-d '}}</td><td>{{muju.muju_seq}}</td><td>{{muju.muju_Reason}}</td><td>{{muju.muju_date1 | date:'Y-m-d '}}</td><td>{{muju.muju_date2 | date:'Y-m-d '}}</td><td>{{muju.muju_date3 | date:'Y-m-d '}}</td><td>{{muju.muju_date4 | date:'Y-m-d '}}</td><td>{{muju.muju_date5 | date:'Y-m-d '}}</td><td>{{muju.muju_date6 | date:'Y-m-d '}}</td><td>{{muju.muju_date7 | date:'Y-m-d '}}</td><td>{{muju.muju_date8 | date:'Y-m-d '}}</td><td>{{muju.muju_date9 | date:'Y-m-d '}}</td><td>{{muju.muju_date10 | date:'Y-m-d '}}</td><td>{{muju.muju_date11 | date:'Y-m-d '}}</td><td>{{muju.muju_date12 | date:'Y-m-d '}}</td><td>{{muju.muju_date13 | date:'Y-m-d '}}</td><td>{{muju.muju_date14 | date:'Y-m-d '}}</td><td>{{muju.muju_date15 | date:'Y-m-d '}}</td><td>{{muju.muju_date16 | date:'Y-m-d '}}</td><td>{{muju.muju_date17 | date:'Y-m-d '}}</td><td>{{muju.muju_date18 | date:'Y-m-d '}}</td><td>{{muju.muju_date19 | date:'Y-m-d '}}</td><td>{{muju.muju_date20 | date:'Y-m-d '}}</td><td>{{muju.muju_date21 | date:'Y-m-d '}}</td></tr>
   {% endfor %}
 
 </table>
