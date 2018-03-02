@@ -95,6 +95,6 @@ admin.site.register(Question, QuestionAdmin)
 
 
 class Mujuv2Admin(ImportExportModelAdmin):
-    list_display = ('muju_wo', 'muju_source_code','muju_source_code_name')
+    list_display = ('muju_wo', 'muju_source_code','muju_source_code_name','muju_status')
     resource_class=Mujuv2Resource
 admin.site.register(Mujuv2, Mujuv2Admin)

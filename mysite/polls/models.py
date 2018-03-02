@@ -62,9 +62,10 @@ class Muju_date1(models.Model):
     muju_date21 = models.DateField('实际完成日期',null=True, blank=True)
     def __str__(self):
         return str(self.Muju)
-        
+
 class Mujuv2 (models.Model):
     muju_wo = models.CharField('模具维修工单',max_length=50, default='.')
+    # muju_wo1 = models.CharField('模具维修工单1',max_length=50, default='.')
     muju_date = models.DateField('AMRT300日期',null=True, blank=True)
     muju_empe = models.CharField('维修人员',max_length=50, default='.')
     muju_source_code = models.CharField('资源编号',max_length=50, default='.')
@@ -94,6 +95,7 @@ class Mujuv2 (models.Model):
     muju_date19 = models.TextField('备注',max_length=1000, default='.')
     muju_date20 = models.CharField('维修瓶颈工序',max_length=50, default='.')
     muju_date21 = models.DateField('实际完成日期',null=True, blank=True)
+    muju_status = models.BooleanField('完成否',default=False)
     def __str__(self):
         return self.muju_wo
 
