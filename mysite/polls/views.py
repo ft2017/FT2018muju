@@ -45,18 +45,18 @@ def index(request):
     # if Muju_list.muju_status=='Ture':
     # print('xxxxxxxxxxxx')
 
-    paginator = Paginator(Muju_list, 10)
-    page = request.GET.get('page',1)
-    class meta:
-        ordering=['muju_wo','muju_date']
-    # context = {'latest_muju_list': latest_muju_list}
-    try:
-        print(page)
-        Muju_list = paginator.page(page)#获取当前页码的记录
-    except PageNotAnInteger:
-        Muju_list = paginator.page(1)#如果用户输入的页码不是整数时,显示第1页的内容
-    except EmptyPage:
-        Muju_list = paginator.page(paginator.num_pages)#如果用户输入的页数不在系统的页码列表中时,显示最后一页的内容
+    # paginator = Paginator(Muju_list, 10)
+    # page = request.GET.get('page',1)
+    # class meta:
+    #     ordering=['muju_wo','muju_date']
+    # # context = {'latest_muju_list': latest_muju_list}
+    # try:
+    #     print(page)
+    #     Muju_list = paginator.page(page)#获取当前页码的记录
+    # except PageNotAnInteger:
+    #     Muju_list = paginator.page(1)#如果用户输入的页码不是整数时,显示第1页的内容
+    # except EmptyPage:
+    #     Muju_list = paginator.page(paginator.num_pages)#如果用户输入的页数不在系统的页码列表中时,显示最后一页的内容
     return render(request, 'polls/index.html', {'Muju_list': Muju_list})
     # return render(request, 'polls/index.html', context)
 #def index(request):
