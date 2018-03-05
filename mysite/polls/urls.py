@@ -9,8 +9,10 @@ app_name = 'polls'
 urlpatterns = [
     # ex: /polls/
     path('', views.index, name='index'),
+    # path(r'^accounts/login/$', 'django.contrib.auth.views.login'),
     path('dev', views.indexDev, name='indexDev'),
     path('muju/<int:muju_id>/', views.detail, name='detail'),
+    # path(r'^accounts/login/$', views)
 ]
     #path('index_old', views.index_old, name='index_old'),
 

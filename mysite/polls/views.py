@@ -9,12 +9,26 @@ from django.shortcuts import get_object_or_404, render
 # Create your views here.
 from . models import Muju1,Muju_date1,Mujuv2
 
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # def index(request):
 #     return HttpResponse("<h1>中文</h1> Hello, world. You're at the polls index.")
 
 
+from django.contrib.auth import authenticate, login, logout
 
+# import os
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
+
+
+# def main():
+#     from polls.models import Mujuv2
+#     f=
+
+ # user = authenticate(username=username, password=password)
+ #    if user is not None and user.is_active:        
+ #    login(request, user)        
+ #    return HttpResponseRedirect(redirect_to)
 
 # def index(request):
 #     latest_muju_list = Muju1.objects.order_by('muju_date')[:1000]
@@ -24,7 +38,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def index(request):
     # Muju_list = Muju1.objects.order_by('muju_wo')[:1000]
+   
     Muju_list=Mujuv2.objects.filter(muju_status='False')
+    # Muju_list=Mujuv2.objects.filter(muju_seq__gt='0')
 
     # if Muju_list.muju_status=='Ture':
     # print('xxxxxxxxxxxx')
