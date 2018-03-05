@@ -40,52 +40,53 @@
 
 </table>
 
-<div class="pagination">
+
+<!-- <div class="pagination"> -->
     
-    <span class="step-links">
+    <!-- <span class="step-links"> -->
 
 
         <!-- {#上一页按钮开始#} -->
         <!-- {# 如果当前页有上一页#} -->
-        {% if Muju_list.has_previous %}
+        <!-- {% if Muju_list.has_previous %} -->
             <!-- {#  当前页的上一页按钮正常使用#} -->
-            <a href="/?page={{ Muju_list.previous_page_number }}" class="btn btn-primary">上一页</a>
-        {% else %}
+            <!-- <a href="/?page={{ Muju_list.previous_page_number }}" class="btn btn-primary">上一页</a> -->
+        <!-- {% else %} -->
             <!-- {# 当前页的不存在上一页时,上一页的按钮不可用#} -->
-            <a href="#" class="btn btn-primary">上一页</a>
-        {% endif %}
+            <!-- <a href="#" class="btn btn-primary">上一页</a> -->
+        <!-- {% endif %} -->
         <!-- {#上一页按钮结束#} -->
         <!-- {# 页码开始#} -->
-        <span class="current">
-            Page {{ Muju_list.number }} of {{ Muju_list.paginator.num_pages }}
-        </span>
-        {% for num in paginator.page_range %}
+        <!-- <span class="current"> -->
+            <!-- Page {{ Muju_list.number }} of {{ Muju_list.paginator.num_pages }} -->
+        <!-- </span> -->
+        <!-- {% for num in paginator.page_range %} -->
        
-            {% if num == currentPage %}
-                <a href="/?page={{ num }}" class="btn btn-primary">{{ num }}</a>
+            <!-- {% if num == currentPage %} -->
+                <!-- <a href="/?page={{ num }}" class="btn btn-primary">{{ num }}</a> -->
 
-            {% else %}
-                <a href="/?page={{ num }}" class="btn btn-primary">{{ num }}</a>
+            <!-- {% else %} -->
+                <!-- <a href="/?page={{ num }}" class="btn btn-primary">{{ num }}</a> -->
 
-            {% endif %}
-        {% endfor %}
+            <!-- {% endif %} -->
+        <!-- {% endfor %} -->
         <!-- {#页码结束#} -->
         <!-- {# 下一页按钮开始#} -->
-        {% if Muju_list.has_next %}
-            <a href="/?page={{ Muju_list.next_page_number }}" class="btn btn-primary">下一页</a>
-        {% else %}
+        <!-- {% if Muju_list.has_next %} -->
+            <!-- <a href="/?page={{ Muju_list.next_page_number }}" class="btn btn-primary">下一页</a> -->
+        <!-- {% else %} -->
 
-            <a href="#" class="btn btn-primary">下一页</a>
-        {% endif %}
-        {# 下一页按钮结束#}
+            <!-- <a href="#" class="btn btn-primary">下一页</a> -->
+        <!-- {% endif %} -->
+        <!-- {# 下一页按钮结束#} -->
 
     
-</span>
-</div>
- {% else %}
-   <p>No late_muju_list are available.</p>
- {% endif %}
-</div>
+<!-- </span> -->
+<!-- </div> -->
+ <!-- {% else %} -->
+   <!-- <p>No late_muju_list are available.</p> -->
+ <!-- {% endif %} -->
+<!-- </div> -->
 
 
 </body>
