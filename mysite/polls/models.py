@@ -116,3 +116,40 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
     def __str__(self):
         return self.choice_text
+
+
+class Yazhupc (models.Model):
+    machine = models.CharField(max_length=200,default='.')
+    prod =  models.CharField(max_length=200,default='.')
+    material = models.CharField(max_length=200,default='.')
+    cycle = models.CharField(max_length=200,default='.')
+    xueshu= models.CharField(max_length=200,default='.')
+    chann=models.CharField(max_length=200,default='.')
+    renshu=models.CharField(max_length=200,default='.')
+    ddanliang=models.CharField(max_length=200,default='.')
+    day=models.CharField(max_length=200,default='.')
+    jh_or_cchu=models.CharField(max_length=200,default='.')
+    baiban1=models.CharField(max_length=200,default='.')
+    wanban1=models.CharField(max_length=200,default='.')
+    baiban2=models.CharField(max_length=200,default='.')
+    wanban2=models.CharField(max_length=200,default='.')
+    baiban3=models.CharField(max_length=200,default='.')
+    wanban3=models.CharField(max_length=200,default='.')
+    baiban4=models.CharField(max_length=200,default='.')
+    wanban4=models.CharField(max_length=200,default='.')
+    baiban5=models.CharField(max_length=200,default='.')
+    wanban5=models.CharField(max_length=200,default='.')
+    baiban6=models.CharField(max_length=200,default='.')
+    wanban6=models.CharField(max_length=200,default='.')
+    baiban7=models.CharField(max_length=200,default='.')
+    wanban7=models.CharField(max_length=200,default='.')
+    baiban8=models.CharField(max_length=200,default='.')
+    wanban8=models.CharField(max_length=200,default='.')
+    zhoupai=models.CharField(max_length=200,default='.')
+    shebeigongshi=models.CharField(max_length=200,default='.')
+    rengongognshi=models.CharField(max_length=200,default='.')
+    jadonglv=models.CharField(max_length=200,default='.')
+    beizhu=models.CharField(max_length=200,default='.')
+    def __str__(self):
+        return self.machine
+

@@ -11,7 +11,7 @@ from import_export.fields import Field
 from .models import Choice, Question
 from django.db import models
 from .models import Yazhu
-from .models import Muju1,Muju_date1,Mujuv2
+from .models import Muju1,Muju_date1,Mujuv2,Yazhupc
 
 
 class PostResource(resources.ModelResource):
@@ -98,3 +98,5 @@ class Mujuv2Admin(ImportExportModelAdmin):
     list_display = ('muju_wo', 'muju_source_code','muju_source_code_name','muju_status')
     resource_class=Mujuv2Resource
 admin.site.register(Mujuv2, Mujuv2Admin)
+
+admin.site.register(Yazhupc)

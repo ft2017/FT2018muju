@@ -1,0 +1,31 @@
+{% load static %}
+
+<html>
+  <head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+</head>
+ <body>
+
+<!-- <h1>xxxxx</h1> -->
+{% if schedula_list %}
+
+<table class="gridtable">
+  <tr><th> </th><th>机台</th><th>品名</th><th>材质</th><th>周期</th><th>穴数</th><th>产能/11H</th><th>人数</th><th>订单量</th><th>天(D)</th><th>计划/ 产出</th><th>已产出</th><th>2018-02-23 白班</th><th>2018-02-23 晚班</th><th>2018-02-24白班</th><th>2018-02-24 晚班</th><th>2018-02-25 白班</th><th>2018-02-25 晚班</th><th>2018-02-26 白班</th><th>2018-02-26 晚班</th><th>2018-02-27 白班</th><th>2018-02-27 晚班</th><th>2018-02-28 白班</th><th>2018-02-28 晚班</th><th>2018-03-01 白班</th><th>2018-03-01 晚班</th><th>2018-03-02 白班</th><th>2018-03-02 晚班</th><th>周排程量      （8/4~8/10）</th><th>设备工时</th><th>人工工时</th><th>设备工时</th><th>机台    稼动率</th><th>备注</th></tr>
+
+  {% for schedula in schedula_list %}
+     <tr><th>{{ forloop.counter }}</th><td>{{ schedula.machine }}</td>
+      <td>{{ schedula.prod  }}</td><td>{{schedula.material}}</td><td>{{schedula.cycle}}</td><td>{{schedula.xueshu}}</td><td>{{schedula.chann     }}</td><td>{{schedula.renshu}}</td><td>{{schedula.ddanliang}}</td><td>{{schedula.day      }}</td><td>{{schedula.jh_or_cchu      }}</td><td>{{schedula.baiban1      }}</td><td>{{schedula.wanban1      }}</td><td>{{schedula.baiban2      }}</td><td>{{schedula.wanban2      }}</td><td>{{schedula.baiban3      }}</td><td>{{schedula.wanban3      }}</td><td>{{schedula.baiban4      }}</td><td>{{schedula.wanban4      }}</td><td>{{schedula.baiban5      }}</td><td>{{schedula.wanban5      }}</td><td>{{schedula.baiban6      }}</td><td>{{schedula.wanban6      }}</td><td>{{schedula.baiban7      }}</td><td>{{schedula.wanban7      }}</td><td>{{schedula.baiban8      }}</td><td>{{schedula.wanban8      }}</td><td>{{schedula.zhoupai      }}</td><td>{{schedula.shebeigongshi      }}</td><td>{{schedula.rengongognshi      }}</td><td>{{schedula.jadonglv      }}</td><td>{{schedula.beizhu      }}</td></tr>
+  {% endfor %}
+
+</table>
+{% endif %}
+</body>
+

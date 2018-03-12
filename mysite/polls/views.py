@@ -7,13 +7,13 @@
 
 from django.shortcuts import get_object_or_404, render
 # Create your views here.
-from . models import Muju1,Muju_date1,Mujuv2
+from . models import Muju1,Muju_date1,Mujuv2,Yazhupc
 
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # def index(request):
 #     return HttpResponse("<h1>中文</h1> Hello, world. You're at the polls index.")
-
+from django.db.models import Q  
 
 from django.contrib.auth import authenticate, login, logout
 
@@ -35,7 +35,7 @@ from django.contrib.auth import authenticate, login, logout
 #     context = {'latest_muju_list': latest_muju_list}
 #     return render(request, 'polls/index.html', context)
 
-
+# @login_require
 def index(request):
     # Muju_list = Muju1.objects.order_by('muju_wo')[:1000]
    
@@ -70,6 +70,10 @@ def index(request):
   #  context = {'latest_muju_list': latest_muju_list}
    # return render(request, 'polls/index.html', context)
 
+
+def schedula(request):
+  schedula_list=Yazhupc.objects.filter(~Q(baiban1= 'nan') or ~Q(wanban1= 'nan') or ~Q(baiban2= 'nan')or ~Q(wanban2= 'nan')or ~Q(baiban3= 'nan')or ~Q(wanban3= 'nan')or ~Q(baiban4= 'nan')or ~Q(wanban4= 'nan')or~Q(baiban5= 'nan')or~Q(wanban5= 'nan')or~Q(baiban6= 'nan')or~Q(wanban6= 'nan')or~Q(baiban7= 'nan')or~Q(wanban7= 'nan')or~Q(baiban8= 'nan')or~Q(wanban8= 'nan'))
+  return render(request, 'polls/schedula.html', {'schedula_list': schedula_list})
 
 
 

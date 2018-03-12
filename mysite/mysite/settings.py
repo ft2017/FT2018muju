@@ -126,5 +126,3 @@ USE_L10N = False
 DATETIME_FORMAT = 'Y-m-d H:i:s'
 
 DATE_FORMAT = 'Y-m-d'
-
-# LOGIN_URL = './'
