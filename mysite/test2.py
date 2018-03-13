@@ -5,7 +5,7 @@ import sqlite3 as lite
 import sys
 # from django.shortcuts import get_object_or_404
 
-df = pd.read_excel('File.xlsx', sheet_name='生产排程')
+df = pd.read_excel('Files.xlsx', sheet_name='生产排程')
 
 print("Column headings:")
 print(df.columns)
@@ -45,7 +45,7 @@ def main():
     from polls.models import Yazhupc 
 #     # con = lite.connect('db.sqlite3')
 #     # blogList=get_object_or_404(Blogs)
-    x=1
+    
     for i in df.index:
         Yazhupc.objects.get_or_create(machine=df['机台 '][i],prod=df['品名'][i],material=df['材质'][i],cycle=df['周期'][i]
                 ,xueshu=df['穴数'][i],chann=df['产能     /11H'][i],renshu=df['人数'][i],ddanliang=df['订单量'][i]
