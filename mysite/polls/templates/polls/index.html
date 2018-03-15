@@ -1,7 +1,87 @@
 {% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>FT2018模具</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" href="{% static 'polls/bootstrap.css' %}" >
+        <!--<link rel="stylesheet" href="css/themes/2/bootstrap.css" media="screen">-->
 
-<html>
-  <head>
+        <link rel="stylesheet" href="{% static 'polls/custom.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+        <link href="css/style.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+            <div class="container-fluid">
+                <!--<a href="http://portal.fulltech-metal.com/" class="navbar-brand">企業入口網站</a>-->
+                <a href="http://portal.fulltech-metal.com/" class="navbar-brand">企業入口網站</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">查詢分類 <span class="caret"></span></a>
+                            <div class="dropdown-menu" aria-labelledby="download">
+                                <!--<a class="dropdown-item" href="a25.php?&index_dept=%E5%88%B6%E9%80%A0&index_cat=%EF%BC%88%E5%9B%9B%EF%BC%89">制造</a>-->
+                                <!-- <div class="dropdown-divider"></div> -->
+                                <a class="dropdown-item" href="http://10.10.0.108/">1. FT2018 企業內部自主開發</a>
+                                <!-- <a class="dropdown-link" href="">   </a> -->
+                                <a class="dropdown-item" href="dev">2. 了解更多</a>
+                                <!-- <a class="dropdown-item" href="a25.php?&index_dept=%E5%88%B6%E9%80%A0&index_cat=%EF%BC%88%E5%9B%9B%EF%BC%89">4. 制造</a>
+                                <a class="dropdown-item" href="a25.php?&index_dept=%E5%8A%A0%E5%B7%A5&index_cat=%EF%BC%88%E4%BA%94%EF%BC%89">5. 加工</a>
+                                <a class="dropdown-item" href="a25.php?&index_dept=%E5%93%81%E4%BF%9D&index_cat=%EF%BC%88%E5%85%AD%EF%BC%89">6. 品保</a>
+                                <a class="dropdown-item" href="a25.php?&index_dept=%E5%B7%B2%E7%9F%A5%E7%BC%BA%E5%A4%B1&index_cat=%EF%BC%88%E4%B8%83%EF%BC%89">7. 已知缺失</a>
+                                <a class="dropdown-item" href="a25.php?&index_dept=开发&index_cat=（八）">8. 开发</a>
+                                <a class="dropdown-item" href="a25.php?&index_dept=模具&index_cat=（九）">9. 模具</a>
+                                <a class="dropdown-item" href="a25.php?&index_dept=生管&index_cat=（十）">10. 生管</a>
+                                <a class="dropdown-item" href="a25.php?&index_dept=稽核&index_cat=（十一）">11. 稽核</a>
+                                <a class="dropdown-item" href="a25.php?&index_dept=财务&index_cat=（十二）">12. 财务</a>
+                                <a class="dropdown-item" href="a25.php?&index_dept=资材&index_cat=（十三）">13. 资材</a>
+                                <a class="dropdown-item" href="a25.php?&index_dept=采购&index_cat=（十四）">14. 采购</a> -->
+                            </div>
+                     <!--    </li>
+                        
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">开发者专区 <span class="caret"></span></a>
+                                <div class="dropdown-menu" aria-labelledby="themes">
+                                    <!--<a class="dropdown-item" href="a25.php?&index_dept=T100环境&index_cat=（四">T100环境</a>-->
+                                  <!--   <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="a25.php?&index_dept=HR系统整合&index_cat=（二）">1. HR系统整合</a>
+                                    <a class="dropdown-item" href="a25.php?&index_dept=T100环境&index_cat=（四">2. T100环境</a>
+                                    <a class="dropdown-item" href="a25.php?&index_dept=保密等級&index_cat=（五）">3. 保密等級</a>
+                                    <a class="dropdown-item" href="a25_find_view.php?view=AQCT300">4. SQL VIEW 查看</a>
+
+                                </div> -->
+                            <!-- </li> -->
+                                                </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                          
+
+                            
+                            <p class="nav-link">当前用户：&nbsp;{{request.user}}</p>      
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="/admin/login/?next=/" target="_blank">登入</a> -->
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="../login_adv/logout.php">登出</a> -->
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+<!--   <head>
  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,21 +91,21 @@
 <link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap.min.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
-</head>
+</head> -->
  <body>
 
 
 
  <div class="container-fluid">
- 	<h1>FT2018模具</h1>
+ 	<!-- h1>FT2018模具</h1>
 
 <h3>由张韬维护,ip地址:10.10.0.112</h3>
-
+ -->
 <!-- <a class='btn btn-primary' href='/admin'>admin界面</a>&nbsp; -->
- <hr>
-        <a class='btn btn-primary btn-lg' href='http://portal.fulltech-metal.com/'>企業入口網站 </a>&nbsp;
-        <a class='btn btn-primary btn-lg' href='http://10.10.0.108/'>FT2018 企業內部自主開發</a>&nbsp;
-        <a class='btn btn-primary btn-lg' href='dev'>了解更多</a>&nbsp;
+ <!-- <hr> -->
+        <!-- <a class='btn btn-primary btn-lg' href='http://portal.fulltech-metal.com/'>企業入口網站 </a>&nbsp; -->
+ <!--        <a class='btn btn-primary btn-lg' href='http://10.10.0.108/'>FT2018 企業內部自主開發</a>&nbsp;
+        <a class='btn btn-primary btn-lg' href='dev'>了解更多</a>&nbsp; -->
       
 <br><br>
 {% if Muju_list %}
@@ -88,6 +168,10 @@
  <!-- {% endif %} -->
 <!-- </div> -->
 
+<script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
 
 </body>
 </html>
