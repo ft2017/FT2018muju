@@ -40,8 +40,9 @@ def index(request):
     # Muju_list = Muju1.objects.order_by('muju_wo')[:1000]
    
     Muju_list=Mujuv2.objects.filter(muju_status='False').order_by('muju_date','muju_wo')
+    #_gt shi >
     # Muju_list=Mujuv2.objects.filter(muju_seq__gt='0')
-
+    #分页view的逻辑
     # if Muju_list.muju_status=='Ture':
     # print('xxxxxxxxxxxx')
 
