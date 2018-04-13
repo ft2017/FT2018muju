@@ -11,7 +11,7 @@ df = pd.read_excel('File.xlsx', sheet_name='列表')
 # math.isnan(df)
 print("Column headings:")
 print(df.columns)
-
+print(df.index)
 
 
 
