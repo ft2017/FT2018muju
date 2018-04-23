@@ -24,9 +24,15 @@ weatherHtml = urllib.request.urlopen(url)
 weatherHtml1=weatherHtml.read()
 # print(weatherHtml1)
 weatherJSON=json.loads(weatherHtml1)
+# print(weatherJSON)
 # import os
 # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 
+for i in weatherJSON:
+    Mujuv2.objects.get_or_create(
+                muju_wo=i['AMRT300'],muju_date=str(i['AMRT300_DATE']),muju_empe=i['AMRT300_BY_NAME'],muju_source_code=i['资源编号']
+                    ,muju_source_code_name=i['资源名称'],muju_seq=i['SEQ'],muju_Reason=i['报修原因']
+                    )
 
 # def main():
 #     from polls.models import Mujuv2
@@ -44,11 +50,11 @@ weatherJSON=json.loads(weatherHtml1)
 
 # @login_require
 def index(request):
-    for i in weatherJSON:
-      Mujuv2.objects.get_or_create(
-        muju_wo=i['AMRT300'],muju_date=str(i['AMRT300_DATE']),muju_empe=i['AMRT300_BY_NAME'],muju_source_code=i['资源编号']
-                    ,muju_source_code_name=i['资源名称'],muju_seq=i['SEQ'],muju_Reason=i['报修原因']
-                    )
+    # for i in weatherJSON:
+    #   Mujuv2.objects.get_or_create(
+    #     muju_wo=i['AMRT300'],muju_date=str(i['AMRT300_DATE']),muju_empe=i['AMRT300_BY_NAME'],muju_source_code=i['资源编号']
+    #                 ,muju_source_code_name=i['资源名称'],muju_seq=i['SEQ'],muju_Reason=i['报修原因']
+    #                 )
     # Muju_list = Muju1.objects.order_by('muju_wo')[:1000]
     Muju_list=Mujuv2.objects.filter(muju_status='False').order_by('muju_date','muju_wo')
     #_gt shi >
